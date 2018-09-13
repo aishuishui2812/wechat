@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['prefix' => 'wx'], function () {
+    Route::get('serverValidate', 'WeXinController@serverValidate');
+});
