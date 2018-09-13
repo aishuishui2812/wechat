@@ -22,9 +22,10 @@ class WeXinController extends Controller {
         $encryptStr = sha1(join($wxParam));
 
         if ($encryptStr == $signature && $echoStr) {
-            exit($echoStr);
+            echo $echoStr;
+            exit();
         } else {
-            exit(-1);
+            exit("-1");
         }
     }
 }
